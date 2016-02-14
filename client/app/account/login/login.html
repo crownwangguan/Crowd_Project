@@ -1,0 +1,67 @@
+<navbar></navbar>
+<div class="modal-dialog">
+  <div class="modal-content">
+
+    <div class="modal-header">
+      <h4 class="modal-title" id="myModalLabel">Log in</h4>
+    </div> <!-- /.modal-header -->
+
+    <div class="modal-body">
+      <form role="form" class="form" name="form" ng-submit="vm.login(form)" novalidate>
+        <div class="form-group">
+          <label>Email</label>
+          <div class="input-group">
+            <input type="email" name="email" class="form-control" placeholder="Login" ng-model="vm.user.email" required>
+            <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+          </div>
+        </div> <!-- /.form-group -->
+
+        <div class="form-group">
+          <label>Password</label>
+          <div class="input-group">
+            <input type="password" name="password" class="form-control" id="uPassword" ng-model="vm.user.password" placeholder="Password" required >
+            <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+          </div> <!-- /.input-group -->
+        </div> <!-- /.form-group -->
+
+        <div class="checkbox">
+          <label>
+            <input type="checkbox"> Remember me
+          </label>
+        </div> <!-- /.checkbox -->
+
+        <div class="form-group has-error">
+          <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted">
+             Please enter your email and password.
+          </p>
+          <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+             Please enter a valid email.
+          </p>
+
+          <p class="help-block">{{ vm.errors.other }}</p>
+        </div>
+
+        <div>
+          <button class="btn btn-primary btn-lg btn-login" type="submit">
+            Login
+          </button>
+          <a class="btn btn-success btn-lg btn-register" href="/signup">
+            Register
+          </a>
+        </div>
+
+        <hr/>
+        <div class="row">
+          <div class="col-sm-12 col-md-12">
+            <oauth-buttons classes="btn-block"></oauth-buttons>
+          </div>
+        </div>
+      </form>
+    </div> <!-- /.modal-body -->
+  </div><!-- /.modal-content -->
+  <hr>
+</div><!-- /.modal-dialog -->
+
+<!-- <h1>Login</h1>
+<p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@example.com</code> / <code>test</code></p>
+<p>Admin account is <code>admin@example.com</code> / <code>admin</code></p> -->
