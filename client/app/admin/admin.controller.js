@@ -9,8 +9,10 @@ class AdminController {
   }
 
   delete(user) {
-    user.$remove();
-    this.users.splice(this.users.indexOf(user), 1);
+  	if (confirm("Are you sure you want to delete this user?") == true) {
+        user.$remove();
+    	this.users.splice(this.users.indexOf(user), 1);
+    }
   }
 }
 

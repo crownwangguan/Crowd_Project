@@ -4,10 +4,10 @@
 
 class MainController {
 
-  constructor($http, $scope, socket) {
+  constructor($http, $scope, socket, Auth) {
     this.$http = $http;
     this.awesomeThings = [];
-
+    this.isAdmin = Auth.isAdmin;
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
       socket.syncUpdates('thing', this.awesomeThings);
