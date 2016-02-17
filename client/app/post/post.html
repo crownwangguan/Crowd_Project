@@ -9,6 +9,10 @@
 	      </span>
 	    </p>
 	    <textarea class="form-control" rows="8" placeholder="Please provide more details so that your task will be soon solved."></textarea>
+	    <b><p>Tags</p></b>
   	</form>
+  	<tags-input ng-model="tags" add-on-paste="true" placeholder="Add a field" required>
+  		<auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
 </div>
 

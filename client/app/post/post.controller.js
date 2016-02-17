@@ -16,6 +16,16 @@ class PostController {
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.tags = [
+            { text: 'Web App' },
+            { text: 'Mobile App' },
+            { text: 'Test' },
+            { text: 'Software' }
+          ];
+          $scope.loadTags = function(query) {
+            return $http.get('/tags?query=' + query);
+          };
   }
 
   addThing() {
