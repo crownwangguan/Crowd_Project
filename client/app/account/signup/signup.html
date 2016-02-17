@@ -1,31 +1,34 @@
 <navbar></navbar>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12">
-      <h1>Sign up</h1>
-    </div>
-    <div class="col-sm-12">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+    </div> <!-- /.modal-header -->
+    <div class="modal-body">
+    <h5 align="center">It's free and after registed you can post tasks or solve tasks to earn benefits.</h5>
+    <hr>
       <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
 
         <div class="form-group" ng-class="{ 'has-success': form.name.$valid && vm.submitted,
                                             'has-error': form.name.$invalid && vm.submitted }">
-          <label>Name</label>
-
-          <input type="text" name="name" class="form-control" ng-model="vm.user.name"
-                 required/>
+          <div class="input-group">
+            <input type="text" name="name" class="form-control" placeholder="Your Name" ng-model="vm.user.name"
+                   required/>
+            <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+          </div>
           <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
-            A name is required
-          </p>
+              A name is required</p>
         </div>
 
         <div class="form-group" ng-class="{ 'has-success': form.email.$valid && vm.submitted,
                                             'has-error': form.email.$invalid && vm.submitted }">
-          <label>Email</label>
-
-          <input type="email" name="email" class="form-control" ng-model="vm.user.email"
-                 required
-                 mongoose-error/>
+          <div class="input-group">
+            <input type="email" name="email" class="form-control" placeholder="Your Email" ng-model="vm.user.email"
+                   required
+                   mongoose-error/>
+            <label for="uLogin" class="input-group-addon glyphicon glyphicon-envelope"></label>
+          </div>  
           <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
             Doesn't look like a valid email.
           </p>
@@ -39,12 +42,13 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.password.$valid && vm.submitted,
                                             'has-error': form.password.$invalid && vm.submitted }">
-          <label>Password</label>
-
-          <input type="password" name="password" class="form-control" ng-model="vm.user.password"
-                 ng-minlength="3"
-                 required
-                 mongoose-error/>
+          <div class="input-group">
+            <input type="password" name="password" class="form-control" placeholder="Password" ng-model="vm.user.password"
+                   ng-minlength="3"
+                   required
+                   mongoose-error/>
+            <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+          </div>
           <p class="help-block"
              ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
             Password must be at least 3 characters.
@@ -56,28 +60,95 @@
 
         <div class="form-group" ng-class="{ 'has-success': form.confirmPassword.$valid && vm.submitted,
                                             'has-error': form.confirmPassword.$invalid && vm.submitted }">
-          <label>Confirm Password</label>
-          <input type="password" name="confirmPassword" class="form-control" ng-model="vm.user.confirmPassword"
+          <div class="input-group">
+            <input type="password" name="confirmPassword" class="form-control" placeholder="Confirm Password" ng-model="vm.user.confirmPassword"
                  match="vm.user.password"
                  ng-minlength="3" required/>
+            <label for="uPassword" class="input-group-addon glyphicon glyphicon-check"></label>
+          </div>
           <p class="help-block"
              ng-show="form.confirmPassword.$error.match && vm.submitted">
             Passwords must match.
           </p>
+        </div><hr>
+<br>
+        <!-- create specialist area -->
+        <div class="row-fluid">
+         <div class="span12">
+         <div style="overflow:auto;width:100%;">
+          <div style="display:inline-block;" class="[ form-group ]">
+              <input type="checkbox" name="fancy-checkbox-primary-custom-icons" id="fancy-checkbox-primary-custom-icons" autocomplete="off" />
+              <div class="[ btn-group ]">
+                  <label for="fancy-checkbox-primary-custom-icons" class="[ btn btn-primary ]">
+                      <span class="[ glyphicon glyphicon-plus ]"></span>
+                      <span class="[ glyphicon glyphicon-minus ]"></span>
+                  </label>
+                  <label for="fancy-checkbox-primary-custom-icons" class="[ btn btn-default active ]">
+                      Mobile App
+                  </label>
+              </div>
+          </div> 
+          <div style="display:inline-block;" class="[ form-group ]">
+              <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" />
+              <div class="[ btn-group ]">
+                  <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-success ]">
+                      <span class="[ glyphicon glyphicon-plus ]"></span>
+                      <span class="[ glyphicon glyphicon-minus ]"></span>
+                  </label>
+                  <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-default active ]">
+                      Web App
+                  </label>
+              </div>
+          </div>
+          <div style="display:inline-block;" class="[ form-group ]">
+              <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
+              <div class="[ btn-group ]">
+                  <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
+                      <span class="[ glyphicon glyphicon-plus ]"></span>
+                      <span class="[ glyphicon glyphicon-minus ]"></span>
+                  </label>
+                  <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-default active ]">
+                      Test
+                  </label>
+              </div>
+          </div>
+          <div style="display:inline-block;" class="[ form-group ]">
+              <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
+              <div class="[ btn-group ]">
+                  <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
+                      <span class="[ glyphicon glyphicon-plus ]"></span>
+                      <span class="[ glyphicon glyphicon-minus ]"></span>
+                  </label>
+                  <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-default active ]">
+                      Software
+                  </label>
+              </div>
+          </div>
         </div>
+      </div>
+    </div>
+<br>
+          <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+              ">
+          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>  
+        <span class="help-block"><b>By clicking Create my account, you agree to our Terms and that you have read our Data Use Policy, including our Cookie Use.</b></span>
 
         <div>
-          <button class="btn btn-inverse btn-lg btn-register" type="submit">
+          <button class="btn btn-success btn-lg btn-register" type="submit">
             Sign up
           </button>
-          <a class="btn btn-default btn-lg btn-login" href="/login">
+          <a class="btn btn-info btn-lg btn-login" href="/login">
             Login
           </a>
         </div>
 
         <hr/>
         <div class="row">
-          <div class="col-sm-4 col-md-3">
+          <div class="col-sm-12 col-md-12">
             <oauth-buttons classes="btn-block"></oauth-buttons>
           </div>
         </div>
