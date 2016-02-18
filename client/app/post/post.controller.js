@@ -16,22 +16,15 @@ class PostController {
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
-
-    $scope.tags = [
-            { text: 'Web App' },
-            { text: 'Mobile App' },
-            { text: 'Test' },
-            { text: 'Software' }
-          ];
-          $scope.loadTags = function(query) {
-            return $http.get('/tags?query=' + query);
-          };
   }
 
   addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
+    if (this.newThing && this.newThingDetail && this.newThingTag) {
+      alert(this.newThingTag.val());
+      this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, tag: this.newThingTag });
       this.newThing = '';
+      this.newThingDetail = '';
+      this.newThingTag = '';
     }
   }
 }

@@ -8,11 +8,11 @@
 	        <button type="submit" class="btn btn-primary" ng-click="post.addThing()">Add New</button>
 	      </span>
 	    </p>
-	    <textarea class="form-control" rows="8" placeholder="Please provide more details so that your task will be soon solved."></textarea>
+	    <textarea class="form-control" rows="8" placeholder="Please provide more details so that your task will be soon solved." ng-model="post.newThingDetail"></textarea>
 	    <b><p>Tags</p></b>
   	</form>
-  	<tags-input ng-model="tags" add-on-paste="true" placeholder="Add a field" required>
-  		<auto-complete source="loadTags($query)"></auto-complete>
+  	<tags-input add-on-paste="true" placeholder="Add a field" ng-model="post.newThingTag" required>
     </tags-input>
+    <p>Model: {{post.newThingTag}}</p>
 </div>
 

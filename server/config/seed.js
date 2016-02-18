@@ -11,22 +11,25 @@ Thing.find({}).removeAsync()
   .then(() => {
     Thing.create({
       name: 'Create a website like BodyBuilding.com',
-      info: 'Integration with popular tools such as Bower, Grunt, Babel, Karma, ' +
-             'Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, ' +
-             'Stylus, Sass, and Less.'
+      info: 'Compare popular websites like bodybuilding.com ' +
+            'side-by-side in our comparison grid. Read reviews ' +
+            'of site trustworthiness, site security and customer service.',
+      tag: 'Web App'
     }, {
       name: 'IOS running record application',
-      info: 'Built with a powerful and fun stack: MongoDB, Express, ' +
-             'AngularJS, and Node.'
+      info: 'Running apps that can track your speed, distance traveled, ' +
+            'calories burned and even map your route',
+      tag: 'Mobile App'
     }, {
       name: 'Android navigation application',
-      info: 'Build system ignores `spec` files, allowing you to keep ' +
-             'tests alongside code. Automatic injection of scripts and ' +
-             'styles into your index.html'
+      info: 'These days most people use Google Maps or Apple Maps ' +
+            'but are always curious what their navigation app options are.',
+      tag: 'Mobile App'
     }, {
-      name: 'IOS super mario like game application',
-      info: 'Best practice client and server structures allow for more ' +
-             'code reusability and maximum scalability'
+      name: 'Test IOS game application',
+      info: ' Interface and general functionality of the game app ' +
+            'should be tested only on a real devices, not just emulators.',
+      tag: 'Test'
     });
   });
 

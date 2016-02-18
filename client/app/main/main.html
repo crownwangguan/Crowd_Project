@@ -39,7 +39,7 @@
     <hr>
       <h1 class="page-header">All the tasks have been posted:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in main.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()">&times;</button></a></li>
+        <li><a href="#" tooltip="{{thing.tag}}">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()">&times;</button></a></li>
       </ul>
     </div>
   </div>
