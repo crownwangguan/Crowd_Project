@@ -20,7 +20,6 @@ class PostController {
 
   addThing() {
     if (this.newThing && this.newThingDetail && this.newThingTag) {
-      alert(this.newThingTag.val());
       this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, tag: this.newThingTag });
       this.newThing = '';
       this.newThingDetail = '';

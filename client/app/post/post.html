@@ -1,7 +1,7 @@
 <navbar></navbar>
 <div class="container">
 	<form class="thing-form">
-	    <h1>Post your tasks:</h1>
+	    <h1 class="alert alert-success">Post your tasks:</h1>
 	    <p class="input-group">
 	      <input type="text" class="form-control" placeholder="Add a new thing here." ng-model="post.newThing">
 	      <span class="input-group-btn">
@@ -9,10 +9,11 @@
 	      </span>
 	    </p>
 	    <textarea class="form-control" rows="8" placeholder="Please provide more details so that your task will be soon solved." ng-model="post.newThingDetail"></textarea>
-	    <b><p>Tags</p></b>
+	    <label for="uLogin" class="glyphicon glyphicon-tag"></label><a href="#" tooltip="In order to find better match, please input tag limit to 'Web App', 'Mobile App', 'Test', and 'Software'." class="label label-info red-tooltip">Tag</a>
+	    <br>
+	    <div class="input-group input-group">
+		  <input type="text" class="form-control" placeholder="Add a field" ng-model="post.newThingTag" required>
+		</div>
   	</form>
-  	<tags-input add-on-paste="true" placeholder="Add a field" ng-model="post.newThingTag" required>
-    </tags-input>
-    <p>Model: {{post.newThingTag}}</p>
 </div>
 

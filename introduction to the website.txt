@@ -1,0 +1,30 @@
+The platform that should be developed has two types of users: workers (the crowd) and clients seeking
+different types of services. 
+
+To use the platform, the user should be registered and has to login.
+Workers have to edit their own profiles. 
+
+
+A profile includes, but not limited to, name, address, expertise areas (i.e.,
+tasks he can perform), level of expertise in each area, charged fee for each task, availability with regard to
+each task, amount of money earned. Two important aspects characterizing each worker are his credibility
+and experience with regard to each task he can perform (credibility is a metric between 0 and 1). 
+
+At the beginning, a new worker has a medium credibility (0.5). This credibility is updated after performing each
+task based on the rate (score) he should receive from the client. This rate reflects the appreciation of the
+client for the quality of the performed task by the worker. For a worker with history, the credibility is
+computed as the average of obtained rates excluding the initial score of 0.5 given by the system. The
+experience is simply based on the number of performed tasks.
+2
+To ask for a task, the user should login.
+
+Each user has a profile including, among other things, information regarding the payment using for instance a pre-registered credit card or PayPal account, or
+any other payment method. To ask for a particular task, the user should specify the task, the location if
+needed, the time limit to perform the task, the budget, the maximum number of workers. 
+
+The system has to find the potential workers to perform the task asked by the user based on: budget, credibility,
+experience, availability, and location if needed. The system has to make recommendations to the user, and
+the user has to choose among the recommended workers. A selected worker by the user has to be notified
+by the system and he can accept or refuse the task. After performing the task, the user has to provide his
+appreciation for each worker. The user cannot ask for another task if the appreciations have not been
+recorded
