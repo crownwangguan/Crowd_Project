@@ -40,11 +40,13 @@ User.find({}).removeAsync()
       name: 'Guan',
       email: 'guan@example.com',
       password: 'guan',
+      special: 'Web App'
     },{
       provider: 'local',
       name: 'Lee',
       email: 'lee@example.com',
-      password: 'lee'
+      password: 'lee',
+      special: 'Software'
     },{
       provider: 'local',
       role: 'admin',

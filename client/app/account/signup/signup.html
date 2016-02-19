@@ -77,7 +77,7 @@
          <div class="span12">
          <div style="overflow:auto;width:100%;">
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-primary-custom-icons" id="fancy-checkbox-primary-custom-icons" autocomplete="off" />
+              <input type="checkbox" name="fancy-checkbox-primary-custom-icons" id="fancy-checkbox-primary-custom-icons" autocomplete="off"  ng-model="checkboxes.mobile" ng-click="myClick()"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-primary-custom-icons" class="[ btn btn-primary ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -87,9 +87,9 @@
                       Mobile App
                   </label>
               </div>
-          </div> 
+          </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" />
+              <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" ng-model="checkboxes.web"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-success ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -101,7 +101,7 @@
               </div>
           </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" />
+              <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" ng-model="checkboxes.test"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -113,7 +113,7 @@
               </div>
           </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" />
+              <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" ng-model="checkboxes.software"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -157,3 +157,4 @@
   </div>
   <hr>
 </div>
+<footer></footer>

@@ -7,9 +7,35 @@ class SignupController {
   submitted = false;
   //end-non-standard
 
-  constructor(Auth, $location) {
+  constructor(Auth, $location, $scope, filterFilter) {
     this.Auth = Auth;
     this.$location = $location;
+
+    // this.user.special = [];
+    // $scope.yourFunction = function() {
+    //   alert($scope.);
+    // };
+    // $scope.checkboxes = {
+    //   mobile: {selected: true},
+    //   web: {selected: false},
+    //   test: {selected: false},
+    //   software: {selected: false}
+    // };
+    // $scope.specials = [
+    //   { name: 'Test',    selected: false },
+    //   { name: 'Web App',   selected: false },
+    //   { name: 'Mobile App',     selected: false },
+    //   { name: 'Software', selected: false }
+    // ];
+    // $scope.selection = [];
+    // $scope.selectedFruits = function selectedFruits() {
+    //   return filterFilter($scope.specials, { selected: true });
+    // };
+    // $scope.$watch('specials|filter:{selected:true}', function (nv) {
+    //   $scope.selection = nv.map(function (special) {
+    //     return special.name;
+    //   });
+    // }, true);
   }
 
   register(form) {
@@ -19,7 +45,8 @@ class SignupController {
       this.Auth.createUser({
         name: this.user.name,
         email: this.user.email,
-        password: this.user.password
+        password: this.user.password,
+        special: this.user.special
       })
       .then(() => {
         // Account created, redirect to home
@@ -37,6 +64,8 @@ class SignupController {
       });
     }
   }
+
+
 }
 
 angular.module('crowdSourcingApp')

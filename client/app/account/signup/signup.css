@@ -1,6 +1,15 @@
+.center {
+    margin: auto;
+    width: 75%;
+}
+
 .form-group input[type="checkbox"] {
     display: none;
 }
+
+/*.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}*/
 
 .form-group input[type="checkbox"] + .btn-group > label span {
     width: 20px;

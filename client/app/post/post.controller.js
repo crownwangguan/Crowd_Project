@@ -4,8 +4,9 @@
 
 class PostController {
 
-  constructor($http, $scope, socket, Auth) {
+  constructor($http, $scope, $location, socket, Auth) {
     this.$http = $http;
+    this.$location = $location;
     this.awesomeThings = [];
     this.isAdmin = Auth.isAdmin;
     $http.get('/api/things').then(response => {
@@ -24,6 +25,7 @@ class PostController {
       this.newThing = '';
       this.newThingDetail = '';
       this.newThingTag = '';
+      this.$location.path('/');
     }
   }
 }
