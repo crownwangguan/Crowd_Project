@@ -9,15 +9,20 @@ class SignupController {
   constructor(Auth, $location, $scope, filterFilter) {
     this.Auth = Auth;
     this.$location = $location;
-    $scope.special = "none";
+    $scope.special = [];
     $scope.checkboxes = {
       mobile: {selected: false, id: 'mobile'},
       web: {selected: false, id: 'web'},
       test: {selected: false, id: 'test'},
       software: {selected: false, id: 'software'},
       myClick : function($event) { 
-          $scope.special = $event.id;
+        if ($event.selected) {
+          $scope.special.push($event.id);
+        } else {
+          var index = $scope.special.indexOf($event.id);
+          $scope.special.splice(index, 1);
         }
+      }
     };
     // $scope.specials = [
     //   { name: 'Test',    selected: false },

@@ -18,6 +18,13 @@ export default function(app) {
   app.route('/:url(api|auth|components|app|bower_components|assets)/*')
    .get(errors[404]);
 
+  app.route('click/posting')
+    .post(function (req, res) {
+      // fetch the person who posted the task
+      // fetch the smooch userId
+      // send a message to the smooch api  
+  })
+
   // All other routes should redirect to the index.html
   app.route('/*')
     .get((req, res) => {
