@@ -6,21 +6,19 @@ class SignupController {
   errors = {};
   submitted = false;
   //end-non-standard
-
   constructor(Auth, $location, $scope, filterFilter) {
     this.Auth = Auth;
     this.$location = $location;
-
-    // this.user.special = [];
-    // $scope.yourFunction = function() {
-    //   alert($scope.);
-    // };
-    // $scope.checkboxes = {
-    //   mobile: {selected: true},
-    //   web: {selected: false},
-    //   test: {selected: false},
-    //   software: {selected: false}
-    // };
+    $scope.special = "none";
+    $scope.checkboxes = {
+      mobile: {selected: false, id: 'mobile'},
+      web: {selected: false, id: 'web'},
+      test: {selected: false, id: 'test'},
+      software: {selected: false, id: 'software'},
+      myClick : function($event) { 
+          $scope.special = $event.id;
+        }
+    };
     // $scope.specials = [
     //   { name: 'Test',    selected: false },
     //   { name: 'Web App',   selected: false },
