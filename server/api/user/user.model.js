@@ -17,7 +17,7 @@ var UserSchema = new Schema({
     default: 'user'
   },
   password: String,
-  special: String,
+  special: [String],
   provider: String,
   salt: String,
   facebook: {},

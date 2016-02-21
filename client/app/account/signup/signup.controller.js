@@ -5,6 +5,7 @@ class SignupController {
   user = {};
   errors = {};
   submitted = false;
+  // returnSpecial = $scope.special;
   //end-non-standard
   constructor(Auth, $location, $scope, filterFilter) {
     this.Auth = Auth;
@@ -20,40 +21,28 @@ class SignupController {
           $scope.special.push($event.id);
         } else {
           var index = $scope.special.indexOf($event.id);
-          $scope.special.splice(index, 1);
+          this.returnSpecial = $scope.special.splice(index, 1);
+          alert(this.returnSpecial);
         }
       }
+
     };
-    // $scope.specials = [
-    //   { name: 'Test',    selected: false },
-    //   { name: 'Web App',   selected: false },
-    //   { name: 'Mobile App',     selected: false },
-    //   { name: 'Software', selected: false }
-    // ];
-    // $scope.selection = [];
-    // $scope.selectedFruits = function selectedFruits() {
-    //   return filterFilter($scope.specials, { selected: true });
-    // };
-    // $scope.$watch('specials|filter:{selected:true}', function (nv) {
-    //   $scope.selection = nv.map(function (special) {
-    //     return special.name;
-    //   });
-    // }, true);
   }
 
   register(form) {
     this.submitted = true;
-
+    // this.user.special = this.$scope.special;
     if (form.$valid) {
       this.Auth.createUser({
         name: this.user.name,
         email: this.user.email,
         password: this.user.password,
-        special: this.user.special
+        special: this.returnSpecial
       })
       .then(() => {
         // Account created, redirect to home
         this.$location.path('/');
+
       })
       .catch(err => {
         err = err.data;
