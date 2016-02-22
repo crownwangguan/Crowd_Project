@@ -3,14 +3,14 @@
     width: 75%;
 }
 
-.form-group input[type="checkbox"] {
+/*.form-group input[type="checkbox"] {
     display: none;
 }
 
 /*.form-group input[type="checkbox"] + .btn-group > label span {
     width: 20px;
 }*/
-
+/*
 .form-group input[type="checkbox"] + .btn-group > label span {
     width: 20px;
 }
@@ -27,4 +27,9 @@
 }
 .form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
     display: none;   
+}*/
+.form-control{
+  -webkit-border-radius: 4px !important;
+     -moz-border-radius: 4px !important;
+          border-radius: 4px !important;
 }

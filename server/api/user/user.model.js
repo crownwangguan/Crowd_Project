@@ -17,8 +17,8 @@ var UserSchema = new Schema({
     default: 'user'
   },
   password: String,
-  special: [String],
-  provider: String,
+  special: String,
+  provider: [String],
   salt: String,
   facebook: {},
   twitter: {},
@@ -39,6 +39,14 @@ UserSchema
       'role': this.role
     };
   });
+
+// UserSchema
+//   .virtual('special')
+//   .get(function(){
+//     return {
+//       'special': this.special
+//     };
+//   });
 
 // Non-sensitive info we'll be putting in the token
 UserSchema

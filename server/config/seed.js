@@ -52,7 +52,13 @@ User.find({}).removeAsync()
       role: 'admin',
       name: 'Admin',
       email: 'admin@example.com',
-      password: 'admin'
+      password: 'admin',
+      special:[
+        'Web App',
+        'Software',
+        'Mobile App',
+        'Test'
+        ]
     })
     .then(() => {
       console.log('finished populating users');

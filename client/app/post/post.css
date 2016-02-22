@@ -2,4 +2,12 @@ textarea {
     resize: none;
 }
 
-.red-tooltip + .tooltip > .tooltip-inner {background-color: #f00;}
+.red-tooltip + .tooltip > .tooltip-inner {
+	background-color: #f00;
+}
+
+.form-control{
+  -webkit-border-radius: 4px !important;
+     -moz-border-radius: 4px !important;
+          border-radius: 4px !important;
+}

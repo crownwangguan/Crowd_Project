@@ -8,11 +8,12 @@ class MainController {
     this.$http = $http;
     this.awesomeThings = [];
     this.isAdmin = Auth.isAdmin;
+    this.currentUser = Auth.getCurrentUser();
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
       socket.syncUpdates('thing', this.awesomeThings);
     });
-
+    
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });

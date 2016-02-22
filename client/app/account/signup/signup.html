@@ -71,13 +71,47 @@
             Passwords must match.
           </p>
         </div><hr>
-<tt>selected = {{special}} </tt>
+
         <!-- create specialist area -->
+        <!-- <div ng-model="vm.user.special">
+          <label>Value1:
+            <input type="checkbox" ng-model="checkboxModel.value1">
+          </label><br/>
+          <label>Value2:
+            <input type="checkbox" ng-model="checkboxModel.value2"
+                   ng-true-value="'YES'" ng-false-value="'NO'">
+           </label><br/>
+          <tt>value1 = {{checkboxModel.value1}}</tt><br/>
+          <tt>value2 = {{checkboxModel.value2}}</tt><br/> 
+        </div> -->
+        <label for="uLogin" class="glyphicon glyphicon-tag"></label><a href="#" tooltip="In order to find better match, please input tag limit to 'Web App', 'Mobile App', 'Test', and 'Software'." class="label label-info">Please add a field you are good at:</a>
+        <br><br>
         <div class="form-group">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Add a field" ng-model="vm.user.special" required>
+          </div>
+        </div>
+
+            
+
+
+
+        <!-- <div ng-model="vm.user.special">
+          <label ng-repeat="special in specials">
+            <input
+              type="checkbox"
+              name="selectedSpecials[]"
+              value="{{special.name}}"
+              ng-model="special.selected"
+            > {{special.name}}
+          </label>
+        </div> -->
+        
+        <!-- <div class="form-group">
          <div class="span12">
-         <div style="overflow:auto;width:100%;" ng-model="vm.user.special">
+         <div style="overflow:auto;width:100%;" name="special" ng-model="vm.user.special">
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-primary-custom-icons" id="fancy-checkbox-primary-custom-icons" autocomplete="off"  ng-model="checkboxes.mobile.selected" ng-click="checkboxes.myClick(checkboxes.mobile)"/>
+              <input type="checkbox" name="fancy-checkbox-primary-custom-icons" id="fancy-checkbox-primary-custom-icons" autocomplete="off"  ng-model="special.mobile.selected" ng-click="special.myClick(special.mobile)"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-primary-custom-icons" class="[ btn btn-primary ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -89,7 +123,7 @@
               </div>
           </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" ng-model="checkboxes.web.selected" ng-change="checkboxes.myClick(checkboxes.web)"/>
+              <input type="checkbox" name="fancy-checkbox-success-custom-icons" id="fancy-checkbox-success-custom-icons" autocomplete="off" ng-model="special.web.selected" ng-change="special.myClick(special.web)"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-success-custom-icons" class="[ btn btn-success ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -101,7 +135,7 @@
               </div>
           </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" ng-model="checkboxes.test.selected" ng-change="checkboxes.myClick(checkboxes.test)"/>
+              <input type="checkbox" name="fancy-checkbox-warning-custom-icons" id="fancy-checkbox-warning-custom-icons" autocomplete="off" ng-model="special.test.selected" ng-change="special.myClick(special.test)"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-warning-custom-icons" class="[ btn btn-warning ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -113,7 +147,7 @@
               </div>
           </div>
           <div style="display:inline-block;" class="[ form-group ]">
-              <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" ng-model="checkboxes.software.selected" ng-change="checkboxes.myClick(checkboxes.software)"/>
+              <input type="checkbox" name="fancy-checkbox-info-custom-icons" id="fancy-checkbox-info-custom-icons" autocomplete="off" ng-model="special.software.selected" ng-change="special.myClick(special.software)"/>
               <div class="[ btn-group ]">
                   <label for="fancy-checkbox-info-custom-icons" class="[ btn btn-info ]">
                       <span class="[ glyphicon glyphicon-plus ]"></span>
@@ -126,7 +160,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
           <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="" >
           <input type="hidden" name="cmd" value="_s-xclick">
           <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
