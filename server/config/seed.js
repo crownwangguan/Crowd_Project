@@ -16,6 +16,42 @@ Thing.find({}).removeAsync()
             'of site trustworthiness, site security and customer service.',
       tag: 'Web App'
     }, {
+      name: 'Android navigation application',
+      info: 'These days most people use Google Maps or Apple Maps ' +
+            'but are always curious what their navigation app options are.',
+      tag: 'Mobile App'
+    }, {
+      name: 'Create a website like BodyBuilding.com',
+      info: 'Compare popular websites like bodybuilding.com ' +
+            'side-by-side in our comparison grid. Read reviews ' +
+            'of site trustworthiness, site security and customer service.',
+      tag: 'Web App'
+    }, {
+      name: 'IOS running record application',
+      info: 'Running apps that can track your speed, distance traveled, ' +
+            'calories burned and even map your route',
+      tag: 'Mobile App'
+    }, {
+      name: 'Test IOS game application',
+      info: ' Interface and general functionality of the game app ' +
+            'should be tested only on a real devices, not just emulators.',
+      tag: 'Test'
+    }, {
+      name: 'IOS running record application',
+      info: 'Running apps that can track your speed, distance traveled, ' +
+            'calories burned and even map your route',
+      tag: 'Mobile App'
+    }, {
+      name: 'Android navigation application',
+      info: 'These days most people use Google Maps or Apple Maps ' +
+            'but are always curious what their navigation app options are.',
+      tag: 'Mobile App'
+    }, {
+      name: 'Test IOS game application',
+      info: ' Interface and general functionality of the game app ' +
+            'should be tested only on a real devices, not just emulators.',
+      tag: 'Test'
+    }, {
       name: 'IOS running record application',
       info: 'Running apps that can track your speed, distance traveled, ' +
             'calories burned and even map your route',
@@ -46,7 +82,7 @@ User.find({}).removeAsync()
       name: 'Lee',
       email: 'lee@example.com',
       password: 'lee',
-      special: 'Software'
+      special: 'Mobile App'
     },{
       provider: 'local',
       role: 'admin',
