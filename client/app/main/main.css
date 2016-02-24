@@ -2,6 +2,10 @@
   margin: 20px 0;
 }
 
+h1 {
+    color: #00cccc;
+}
+
 #banner {
   border-bottom: none;
   margin-top: -20px;
@@ -11,6 +15,10 @@
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+p.lead {
+    color: #cccc00;
 }
 
 .hero-unit {
