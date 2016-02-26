@@ -1,4 +1,8 @@
 <navbar></navbar>
+
 <div class="container">
-	<p>All the tasks has been posted by this user is shown.</p>
+	<ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in mytask.awesomeThings">
+        <li><a href="#" tooltip="{{thing.info}}" ng-show="mytask.isLoggedIn == true && thing.email == mytask.newMail">{{thing.email}}</a></li>
+      </ul>
+	<p>You haven't post any tasks. Create now task by clicking "Post" in the nav bar</p>
 </div>
