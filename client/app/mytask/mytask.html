@@ -2,7 +2,7 @@
 
 <div class="container">
 	<ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in mytask.awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}" ng-show="mytask.isLoggedIn == true && thing.email == mytask.newMail">{{thing.email}}</a></li>
+        <li><a href="#" tooltip="{{thing.info}}" ng-show="mytask.isAdmin() || mytask.isLoggedIn == true && thing.email == mytask.newMail">{{thing.name}}</a></li>
     </ul>
 	<p ng-show="thing.email == 'null'">You haven't post any tasks. Create now task by clicking "Post" in the nav bar</p>
 </div>

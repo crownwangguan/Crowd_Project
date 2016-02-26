@@ -9,6 +9,7 @@ class MytaskController {
     this.$location = $location;
     this.awesomeThings = [];
     this.isLoggedIn = Auth.isLoggedIn();
+    this.isAdmin = Auth.isAdmin();
     this.newMail = Auth.getCurrentUser().email;
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
