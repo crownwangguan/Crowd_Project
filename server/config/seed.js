@@ -15,24 +15,28 @@ Thing.find({}).removeAsync()
             'side-by-side in our comparison grid. Read reviews ' +
             'of site trustworthiness, site security and customer service.',
       tag: 'Web App',
+      position: '5',
       email: 'guan@example.com'
     }, {
       name: 'Android navigation application',
       info: 'These days most people use Google Maps or Apple Maps ' +
             'but are always curious what their navigation app options are.',
       tag: 'Mobile App',
+      position: '2',
       email: 'lee@example.com'
     }, {
       name: 'Test IOS game application',
       info: ' Interface and general functionality of the game app ' +
             'should be tested only on a real devices, not just emulators.',
       tag: 'Test',
+      position: '1',
       email: 'guan@example.com'
     }, {
       name: 'IOS running record application',
       info: 'Running apps that can track your speed, distance traveled, ' +
             'calories burned and even map your route',
       tag: 'Mobile App',
+      position: '2',
       email: 'lee@example.com'
     });
   });

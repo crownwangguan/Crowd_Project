@@ -11,12 +11,12 @@ class MytaskController {
     this.isLoggedIn = Auth.isLoggedIn();
     this.isAdmin = Auth.isAdmin();
     this.newMail = Auth.getCurrentUser().email;
-
+    this.total = 1;
+    
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
       socket.syncUpdates('thing', this.awesomeThings);
     });
-    
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });
