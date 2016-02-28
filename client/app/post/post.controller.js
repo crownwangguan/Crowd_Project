@@ -22,10 +22,14 @@ class PostController {
 
   addThing() {
     if (this.newThing && this.newThingDetail && this.newThingTag) {
-      this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, tag: this.newThingTag, email: this.newMail });
+      this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, 
+        tag: this.newThingTag, email: this.newMail, money: this.newThingMoney, 
+        position: this.newThingPosition });
       this.newThing = '';
       this.newThingDetail = '';
       this.newThingTag = '';
+      this.newThingMoney = '';
+      this.newThingPosition = '';
       this.$location.path('/');
     }
   }

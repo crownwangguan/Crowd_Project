@@ -11,7 +11,6 @@ class MytaskController {
     this.isLoggedIn = Auth.isLoggedIn();
     this.isAdmin = Auth.isAdmin();
     this.newMail = Auth.getCurrentUser().email;
-    this.total = 1;
     
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
@@ -22,7 +21,10 @@ class MytaskController {
     });
   }
   deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
+    var r = confirm("Warning! Are you sure you want to delete this task?");
+    if (r == true) {
+        this.$http.delete('/api/things/' + thing._id);
+    }
   }
 }
 

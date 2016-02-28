@@ -40,7 +40,25 @@
       <h1 class="alert alert-warning">All the tasks have been posted:</h1>
       <ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in main.awesomeThings">
         <!-- <li><a href="#" tooltip="{{thing.tag}}" ng-show="">{{thing.name}} {{main.currentUser.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()" >&times;</button></a></li> -->
-        <li><a href="#" tooltip="{{thing.info}}" ng-show="main.isLoggedIn == false || main.isAdmin() || main.currentUser.special == thing.tag">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()" >&times;</button></a></li>
+        <li>
+        <a href="#" tooltip="${{thing.money}}" ng-click="showDetails = ! showDetails" ng-show="main.isLoggedIn == false || main.isAdmin() || main.currentUser.special == thing.tag">{{thing.name}}<button type="button" class="close" ng-click="main.deleteThing(thing)" ng-show="main.isAdmin()" >&times;</button></a>
+        <div class="row" ng-show="showDetails">
+          <div class="col-sm-12 col-md-12">
+            <div class="thumbnail">
+              <h2 class="alert alert-info">Task: {{thing.name}}</h2>
+              <span class="glyphicon glyphicon-tag" aria-hidden="true"></span><span class="label label-warning" >{{thing.tag}}</span> <h4>Provider: {{thing.email}}</h4>
+              <hr>
+              <h2>Task details:</h2><h3>{{thing.info}}</h3>
+              <h2>Task money:</h2><h3>${{thing.money}}</h3>
+              <h2>Postition:</h2>{{thing.taken}}/{{thing.position}}
+              <div class="progress">
+                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="({{thing.taken}}/{{thing.position}})*100" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( (thing.taken/thing.position)*100 + '%' ) }">
+                </div>
+              </div>    
+            </div>
+          </div>
+        </div>
+        </li>
         <!-- ng-show="main.currentUser.special == thing.tag" -->
       </ul>
     </div>

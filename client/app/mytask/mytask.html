@@ -12,10 +12,9 @@
 	            	<span class="glyphicon glyphicon-tag" aria-hidden="true"></span><span class="label label-warning" >{{thing.tag}}</span><br>
 	            	<hr>
 	            	<h2>Task details:</h2><h3>{{thing.info}}</h3>
-	            	<h2>Postition:</h2>{{mytask.total}}/{{thing.position}}
+	            	<h2>Postition:</h2>{{thing.taken}}/{{thing.position}}
 	            	<div class="progress">
-					  <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="({{mytask.total}}/{{thing.position}})*100" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( (mytask.total/thing.position)*100 + '%' ) }">
-					    <span class="sr-only">{{mytask.getPercentage()}}% Complete (warning)</span>
+					  	<div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="({{thing.taken}}/{{thing.position}})*100" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( (thing.taken/thing.position)*100 + '%' ) }">
 					  </div>
 					</div>		
 	            </div>

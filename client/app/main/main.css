@@ -6,6 +6,10 @@ h1 {
     color: #00cccc;
 }
 
+h4 {
+    color: #336600;
+}
+
 #banner {
   border-bottom: none;
   margin-top: -20px;

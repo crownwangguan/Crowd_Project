@@ -7,6 +7,8 @@ var ThingSchema = new mongoose.Schema({
   info: String,
   tag: String,
   position: Number,
+  money: Number,
+  taken: Number,
   active: Boolean,
   email: String
 });
