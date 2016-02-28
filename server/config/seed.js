@@ -17,8 +17,8 @@ Thing.find({}).removeAsync()
       tag: 'Web App',
       money: '1000',
       position: '5',
-      taken: '2',
-      email: 'guan@example.com'
+      taken: '1',
+      email: 'mike@example.com'
     }, {
       name: 'Android navigation application',
       info: 'These days most people use Google Maps or Apple Maps ' +
@@ -42,10 +42,10 @@ Thing.find({}).removeAsync()
       info: 'Running apps that can track your speed, distance traveled, ' +
             'calories burned and even map your route',
       tag: 'Mobile App',
-      money: '600',
+      money: '500',
       position: '2',
       taken: '1',
-      email: 'lee@example.com'
+      email: 'kim@example.com'
     });
   });
 
@@ -63,8 +63,43 @@ User.find({}).removeAsync()
       name: 'Lee',
       email: 'lee@example.com',
       password: 'lee',
+      money: '600',
+      special: 'Mobile App'
+    },{
+      provider: 'local',
+      name: 'Kim',
+      email: 'kim@example.com',
+      password: 'kim',
       money: '500',
       special: 'Mobile App'
+    },{
+      provider: 'local',
+      name: 'Mike',
+      email: 'mike@example.com',
+      password: 'mike',
+      money: '500',
+      special: 'Mobile App'
+    },{
+      provider: 'local',
+      name: 'Tony',
+      email: 'tony@example.com',
+      password: 'tony',
+      money: '800',
+      special: 'Mobile App'
+    },{
+      provider: 'local',
+      name: 'Tom',
+      email: 'tom@example.com',
+      password: 'tom',
+      money: '1000',
+      special: 'Web App'
+    },{
+      provider: 'local',
+      name: 'Amanda',
+      email: 'amanda@example.com',
+      password: 'amanda',
+      money: '200',
+      special: 'Test'
     },{
       provider: 'local',
       role: 'admin',

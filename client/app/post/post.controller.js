@@ -10,6 +10,7 @@ class PostController {
     this.awesomeThings = [];
     this.isAdmin = Auth.isAdmin;
     this.newMail = Auth.getCurrentUser().email;
+    this.taken = 0;
     $http.get('/api/things').then(response => {
       this.awesomeThings = response.data;
       socket.syncUpdates('thing', this.awesomeThings);
@@ -24,7 +25,7 @@ class PostController {
     if (this.newThing && this.newThingDetail && this.newThingTag) {
       this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, 
         tag: this.newThingTag, email: this.newMail, money: this.newThingMoney, 
-        position: this.newThingPosition });
+        position: this.newThingPosition, taken: this.taken });
       this.newThing = '';
       this.newThingDetail = '';
       this.newThingTag = '';

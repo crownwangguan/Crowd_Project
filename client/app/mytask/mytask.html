@@ -1,9 +1,10 @@
 <navbar></navbar>
 
 <div class="container">
+	<h1 class="alert alert-warning">My tasks:</h1>
 	<ul class="nav nav-tabs nav-stacked col-md-12 col-lg-12 col-sm-12" ng-repeat="thing in mytask.awesomeThings">
         <li>
-        	<a data-toggle="modal" href="#myModal" tooltip="{{thing.info}}" ng-click="showDetails = ! showDetails" ng-show="mytask.isLoggedIn == true && thing.email == mytask.newMail">{{thing.name}}<button type="button" class="close" ng-click="mytask.deleteThing(thing)">&times;</button>
+        	<a data-toggle="modal" href="#" ng-click="showDetails = ! showDetails" ng-show="mytask.isLoggedIn == true && thing.email == mytask.newMail">{{thing.name}}<button type="button" class="close" tooltip="Delete this task" ng-click="mytask.deleteThing(thing)">&times;</button>
         	</a>
         	<div class="row" ng-show="showDetails">
 			  <div class="col-sm-12 col-md-12">
