@@ -20,7 +20,8 @@ class SignupController {
         name: this.user.name,
         email: this.user.email,
         password: this.user.password,
-        special: this.user.special
+        special: this.user.special,
+        money: this.user.money
       })
       .then(() => {
         // Account created, redirect to home
@@ -39,8 +40,6 @@ class SignupController {
       });
     }
   }
-
-
 }
 
 angular.module('crowdSourcingApp')

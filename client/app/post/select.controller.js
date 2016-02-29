@@ -2,7 +2,7 @@
 
 (function() {
 
-class PostController {
+class SelectController {
 
   constructor($http, $scope, $location, socket, Auth) {
     this.$http = $http;
@@ -31,12 +31,12 @@ class PostController {
       this.newThingTag = '';
       this.newThingMoney = '';
       this.newThingPosition = '';
-      this.$location.path('/select');
+      this.$location.path('/');
     }
   }
 }
 
 angular.module('crowdSourcingApp')
-  .controller('PostCtrl', PostController);
+  .controller('SelectCtrl', SelectController);
 
 })();
