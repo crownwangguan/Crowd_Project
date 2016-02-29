@@ -55,7 +55,7 @@
                 <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="({{thing.taken}}/{{thing.position}})*100" aria-valuemin="0" aria-valuemax="100" ng-style="{width : ( (thing.taken/thing.position)*100 + '%' ) }">
                 </div>
               </div>
-              <button type="button" class="btn btn-success btn-lg" ng-disabled="thing.taken == thing.position || thing.email == main.userMail" ng-click="main.updateThing(thing)">Take this task</button> 
+              <button type="button" class="btn btn-success btn-lg" ng-disabled="thing.taken == thing.position || thing.email == main.userMail || main.isLoggedIn == false" ng-click="main.updateThing(thing)">Take this task</button> 
             </div>
           </div>
         </div>
