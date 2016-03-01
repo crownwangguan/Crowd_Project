@@ -4,10 +4,12 @@
 
 class SelectController {
 
-  constructor($http, $scope, $location, thingService) {
+  constructor($http, $scope, $location, Auth, thingService) {
     this.$http = $http;
     this.$location = $location;
     this.thingService = thingService;
+    this.isAdmin = Auth.isAdmin;
+    this.currentUser = Auth.getCurrentUser();
     this.users = [];
     this.thing = thingService.getThings();
     this.thing.money = thingService.getThings()[0];
@@ -18,15 +20,10 @@ class SelectController {
     });
   }
 
-  isSameSpecailTag(user) {
-    return true;
-    // alert(user.tag)
-    // if(user.tag == this.thing.tag){
-    //   return true;
-    // } else {
-    //   return false;
-    // }
+  checkUser() {
+    
   }
+
 }
 
 angular.module('crowdSourcingApp')

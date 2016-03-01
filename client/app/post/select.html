@@ -5,23 +5,25 @@
     <div class="modal-header">
       <h4 class="modal-title">All the workers suit for your task: </h4>
     </div>
+    <form class="thing-form">
+	    <div class="modal-body">
+	    	<ul class="list-group">
+	    	<!-- ng-show="select.isSameSpecailTag(user)" -->
+			    <li class="list-group-item" ng-repeat="user in select.users" ng-show="user.special == select.thing.tag && !user.isAdmin() && user.name != select.currentUser.name">
+				    <div class="checkbox">
+					    <label>
+					      <input type="checkbox" ng-checked="select.checked"> {{user.name}} : ask for ${{user.money}}
+					    </label>
+					</div>
+			    </li>
+			</ul>
 
-    <div class="modal-body">
-    	<ul class="list-group">
-		    <li class="list-group-item" ng-repeat="user in select.users" ng-show="select.isSameSpecailTag(user)">
-			    <div class="checkbox">
-				    <label>
-				      <input type="checkbox"> {{user.name}} : ask for ${{user.money}}
-				    </label>
-				</div>
-		    </li>
-		</ul>
-    </div>
+	    </div>
 
-    <div class="modal-footer">
-      <button type="submit" class="btn btn-primary" data-dismiss="modal">Comfirm</button>
-    </div>
-
+	    <div class="modal-footer">
+	      <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="select.checkUser()">Comfirm</button>
+	    </div>
+	</form>
   </div>
 </div>
 <footer></footer>
