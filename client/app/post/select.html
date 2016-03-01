@@ -12,16 +12,17 @@
 			    <li class="list-group-item" ng-repeat="user in select.users" ng-show="user.special == select.thing.tag && !user.isAdmin() && user.name != select.currentUser.name">
 				    <div class="checkbox">
 					    <label>
-					      <input type="checkbox" ng-checked="select.checked"> {{user.name}} : ask for ${{user.money}}
+					      <input type="checkbox" checklist-model="select.selectedUsers.ids" checklist-value="user._id"> {{user.name}} : ask for ${{user.money}}
 					    </label>
 					</div>
 			    </li>
 			</ul>
-
 	    </div>
+		{{select.selectedUsers.ids}},
+		{{select.checkedUser}}
 
 	    <div class="modal-footer">
-	      <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="select.checkUser()">Comfirm</button>
+	      <button type="submit" class="btn btn-primary" data-dismiss="modal" ng-click="select.informUser()">Comfirm</button>
 	    </div>
 	</form>
   </div>

@@ -11,7 +11,8 @@ angular.module('crowdSourcingApp', [
   'btford.socket-io',
   'ui.bootstrap',
   'validation.match',
-  'ngTagsInput'
+  'ngTagsInput',
+  'checklist-model'
 ])
   .config(function($routeProvider, $locationProvider) {
     $routeProvider

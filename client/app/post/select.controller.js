@@ -11,6 +11,10 @@ class SelectController {
     this.isAdmin = Auth.isAdmin;
     this.currentUser = Auth.getCurrentUser();
     this.users = [];
+    this.selectedUsers = {
+      ids: [this.currentUser._id]
+    };
+    this.checkedUser;
     this.thing = thingService.getThings();
     this.thing.money = thingService.getThings()[0];
     this.thing.tag = thingService.getThings()[1];
@@ -20,8 +24,15 @@ class SelectController {
     });
   }
 
-  checkUser() {
-    
+  informUser() {
+
+    for (var id in this.selectedUsers.ids){
+      this.$http.get('/api/users/' + this.selectedUsers.ids[id]).then(response=> {
+        this.checkedUser = response.data;
+        socket.syncUpdates('user', this.checkedUser);
+      });
+      this.$http.put('/api/users/' + this.selectedUsers.ids[id], { message: true });
+    }
   }
 
 }
