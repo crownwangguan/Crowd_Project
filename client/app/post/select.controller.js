@@ -4,35 +4,28 @@
 
 class SelectController {
 
-  constructor($http, $scope, $location, socket, Auth) {
+  constructor($http, $scope, $location, thingService) {
     this.$http = $http;
     this.$location = $location;
-    this.awesomeThings = [];
-    this.isAdmin = Auth.isAdmin;
-    this.newMail = Auth.getCurrentUser().email;
-    this.taken = 0;
-    $http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-      socket.syncUpdates('thing', this.awesomeThings);
-    });
-
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('thing');
+    this.thingService = thingService;
+    this.users = [];
+    this.thing = thingService.getThings();
+    this.thing.money = thingService.getThings()[0];
+    this.thing.tag = thingService.getThings()[1];
+    $http.get('/api/users').then(response => {
+      this.users = response.data;
+      socket.syncUpdates('user', this.users);
     });
   }
 
-  addThing() {
-    if (this.newThing && this.newThingDetail && this.newThingTag) {
-      this.$http.post('/api/things', { name: this.newThing, info: this.newThingDetail, 
-        tag: this.newThingTag, email: this.newMail, money: this.newThingMoney, 
-        position: this.newThingPosition, taken: this.taken });
-      this.newThing = '';
-      this.newThingDetail = '';
-      this.newThingTag = '';
-      this.newThingMoney = '';
-      this.newThingPosition = '';
-      this.$location.path('/');
-    }
+  isSameSpecailTag(user) {
+    return true;
+    // alert(user.tag)
+    // if(user.tag == this.thing.tag){
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 }
 

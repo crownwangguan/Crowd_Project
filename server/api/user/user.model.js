@@ -41,14 +41,6 @@ UserSchema
     };
   });
 
-// UserSchema
-//   .virtual('special')
-//   .get(function(){
-//     return {
-//       'special': this.special
-//     };
-//   });
-
 // Non-sensitive info we'll be putting in the token
 UserSchema
   .virtual('token')
