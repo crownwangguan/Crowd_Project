@@ -12,6 +12,13 @@ function UserResource($resource) {
         controller:'password'
       }
     },
+    changeMessage: {
+      method: 'PUT'
+      // ,
+      // params: {
+      //   controller:'message'
+      // }
+    },
     get: {
       method: 'GET',
       params: {

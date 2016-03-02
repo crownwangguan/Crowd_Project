@@ -89,6 +89,29 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
     },
 
     /**
+     * Change message
+     *
+     * @param  {Boolean}   newMessage
+     * @param  {Function} callback    - optional, function(error, user)
+     * @return {Promise}
+     */
+    changeMessage(userId, newMessage, callback) {
+      console.log(userId);
+      console.log(newMessage);
+      return User.changeMessage({ id: userId }, {
+        newMessage: newMessage
+      }, function() {
+        return safeCb(callback)(null);
+      }, function(err) {
+        return safeCb(callback)(err);
+      }).$promise;
+      
+      // return $http.put('/api/users/' + userId, {
+      //   message: newMessage
+      // }
+    },
+
+    /**
      * Gets all available info on a user
      *   (synchronous|asynchronous)
      *

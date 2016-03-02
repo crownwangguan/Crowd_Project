@@ -110,15 +110,28 @@ export function changePassword(req, res, next) {
  * Change a users message
  */
 
-export function update(req, res) {
-  if (req.body._id) {
-    delete req.body._id;
-  }
-  User.findByIdAsync(req.params.id)
-    .then(handleEntityNotFound(res))
-    .then(saveUpdates(req.body))
-    .then(responseWithResult(res))
-    .catch(handleError(res));
+// export function update(req, res) {
+//   var userId = req.user._id;
+//   var newMessage = Boolean(req.body.newMessage);
+//   console.log(userId);
+//   console.log(newMessage);
+//   User.findByIdAsync(userId)
+//     .then(user => {
+//         user.message = newMessage;
+//         return user.saveAsync()
+//           .then(() => {
+//             res.status(204).end();
+//           })
+//           .catch(validationError(res));
+//     });
+// }
+export function changeMessage(req, res, next) {
+  console.log("asdf");
+    var userId = req.user._id;
+    var newMessage = Boolean(req.body.newMessage);
+    console.log(userId);
+    console.log(newMessage);
+    
 }
 
 /**
