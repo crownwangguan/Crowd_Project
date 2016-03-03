@@ -57,7 +57,7 @@ User.find({}).removeAsync()
       email: 'guan@example.com',
       password: 'guan',
       money: '1000',
-      message: 'false',
+      choosen: 'false',
       special: 'Web App'
     },{
       provider: 'local',
@@ -65,7 +65,7 @@ User.find({}).removeAsync()
       email: 'lee@example.com',
       password: 'lee',
       money: '600',
-      message: 'false',
+      choosen: 'false',
       special: 'Mobile App'
     },{
       provider: 'local',
@@ -73,7 +73,7 @@ User.find({}).removeAsync()
       email: 'kim@example.com',
       password: 'kim',
       money: '500',
-      message: 'false',
+      choosen: 'false',
       special: 'Mobile App'
     },{
       provider: 'local',
@@ -81,7 +81,7 @@ User.find({}).removeAsync()
       email: 'mike@example.com',
       password: 'mike',
       money: '500',
-      message: 'false',
+      choosen: 'false',
       special: 'Mobile App'
     },{
       provider: 'local',
@@ -89,7 +89,7 @@ User.find({}).removeAsync()
       email: 'tony@example.com',
       password: 'tony',
       money: '800',
-      message: 'false',
+      choosen: 'false',
       special: 'Mobile App'
     },{
       provider: 'local',
@@ -97,7 +97,7 @@ User.find({}).removeAsync()
       email: 'tom@example.com',
       password: 'tom',
       money: '1000',
-      message: 'false',
+      choosen: 'false',
       special: 'Web App'
     },{
       provider: 'local',
@@ -105,7 +105,7 @@ User.find({}).removeAsync()
       email: 'amanda@example.com',
       password: 'amanda',
       money: '200',
-      message: 'false',
+      choosen: 'false',
       special: 'Test'
     },{
       provider: 'local',

@@ -13,11 +13,10 @@ function UserResource($resource) {
       }
     },
     changeMessage: {
-      method: 'PUT'
-      // ,
-      // params: {
-      //   controller:'message'
-      // }
+      method: 'PUT',
+      params: {
+        controller:'choosen'
+      }
     },
     get: {
       method: 'GET',

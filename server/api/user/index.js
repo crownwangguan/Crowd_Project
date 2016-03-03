@@ -10,7 +10,7 @@ router.get('/', auth.isAuthenticated(), controller.index);
 router.delete('/:id', auth.hasRole('admin'), controller.destroy);
 router.get('/me', auth.isAuthenticated(), controller.me);
 router.put('/:id/password', auth.isAuthenticated(), controller.changePassword);
-router.put('/:id', controller.changeMessage);
+router.put('/:id/choosen', controller.changeMessage);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

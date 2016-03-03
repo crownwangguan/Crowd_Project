@@ -19,7 +19,7 @@ var UserSchema = new Schema({
   password: String,
   special: String,
   money: Number,
-  message: Boolean,
+  choosen: Boolean,
   provider: [String],
   salt: String,
   facebook: {},

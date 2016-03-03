@@ -15,6 +15,7 @@ class NavbarController {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser;
+    this.notice = (Auth.getCurrentUser.choosen == true) ? 1 : 0;
   }
 
   isActive(route) {

@@ -13,7 +13,7 @@ class SelectController {
     this.currentUser = Auth.getCurrentUser();
     this.users = [];
     this.selectedUsers = {
-      ids: [this.currentUser._id]
+      ids: []
     };
     this.currUser;
     this.checkedUser = [];
@@ -35,6 +35,7 @@ class SelectController {
         // socket.syncUpdates('user', this.checkedUser);
       });
       this.Auth.changeMessage(this.selectedUsers.ids[id], true);
+      this.$location.path('/');
       // this.$http.put('/api/users/' + this.selectedUsers.ids[id], { message: true });
     }
   }

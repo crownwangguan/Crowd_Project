@@ -125,13 +125,20 @@ export function changePassword(req, res, next) {
 //           .catch(validationError(res));
 //     });
 // }
-export function changeMessage(req, res, next) {
-  console.log("asdf");
-    var userId = req.user._id;
+export function changeMessage(req, res) {
+    var userId = req.body.id;
     var newMessage = Boolean(req.body.newMessage);
-    console.log(userId);
-    console.log(newMessage);
-    
+    if(!req.body) { return res.send(404); }
+    if(!userId) { return res.send(404); }
+    User.findByIdAsync(userId)
+    .then(user => {
+      user.choosen = newMessage;
+      return user.saveAsync()
+          .then(() => {
+            res.status(204).end();
+          })
+          .catch(validationError(res));
+      });
 }
 
 /**

@@ -98,7 +98,8 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
     changeMessage(userId, newMessage, callback) {
       console.log(userId);
       console.log(newMessage);
-      return User.changeMessage({ id: userId }, {
+      return User.changeMessage({ id: userId },{ 
+        id: userId,
         newMessage: newMessage
       }, function() {
         return safeCb(callback)(null);
