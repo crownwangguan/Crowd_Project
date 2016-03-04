@@ -22,8 +22,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/signup')}"><a href="/signup">Sign up</a></li>
         <li ng-hide="nav.isLoggedIn()" ng-class="{active: nav.isActive('/login')}"><a href="/login">Login</a></li>
-        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser().name }} ({{nav.getCurrentUser().special}})</p></li>
-        <li ng-show="nav.isLoggedIn()"><a href="/">  <span class="glyphicon glyphicon-bell "></span><span class="badge badge-notify">{{nav.getCurrentUser().choosen == true ? 1 : 0}}</span></a></li>
+        <li ng-show="nav.isLoggedIn()"><p class="navbar-text">Hello {{ nav.getCurrentUser.name }} ({{nav.getCurrentUser.special}})</p></li>
+        <li ng-show="nav.isLoggedIn()"><a href="/">  <span class="glyphicon glyphicon-bell "></span><span class="badge badge-notify" ng-click="nav.isee()">{{nav.getCurrentUser.choosen == true ? 1 : 0}}</span></a></li>
         <li ng-show="nav.isLoggedIn()" ng-class="{active: nav.isActive('/settings')}"><a href="/settings"><span class="glyphicon glyphicon-cog"></span></a></li>
         <li ng-show="nav.isLoggedIn()"><a href="/logout">Logout</a></li>
       </ul>
