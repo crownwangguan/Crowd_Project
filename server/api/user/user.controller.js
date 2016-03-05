@@ -90,7 +90,9 @@ export function changePassword(req, res, next) {
   var userId = req.user._id;
   var oldPass = String(req.body.oldPassword);
   var newPass = String(req.body.newPassword);
-
+  if(typeof userId === 'undefined'){
+        return res.status(204).end();
+      }
   User.findByIdAsync(userId)
     .then(user => {
       if (user.authenticate(oldPass)) {

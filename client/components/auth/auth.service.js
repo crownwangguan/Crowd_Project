@@ -106,10 +106,6 @@ function AuthService($location, $http, $cookies, $q, appConfig, Util, User) {
       }, function(err) {
         return safeCb(callback)(err);
       }).$promise;
-      
-      // return $http.put('/api/users/' + userId, {
-      //   message: newMessage
-      // }
     },
 
     /**

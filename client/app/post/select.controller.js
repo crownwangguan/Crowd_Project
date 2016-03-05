@@ -27,17 +27,15 @@ class SelectController {
   }
 
   informUser() {
-
-    for (var id in this.selectedUsers.ids){
-      this.$http.get('/api/users/' + this.selectedUsers.ids[id]).then(response=> {
-        this.checkedUser.push(response.data);
-        // this.$http.put('/api/users/' + response.data._id, { message: response.data.message });
-        // socket.syncUpdates('user', this.checkedUser);
-      });
-      this.Auth.changeMessage(this.selectedUsers.ids[id], true);
-      this.$location.path('/');
-      // this.$http.put('/api/users/' + this.selectedUsers.ids[id], { message: true });
+    if(this.selectedUsers.ids.length > 0){
+      for (var id in this.selectedUsers.ids){
+        this.$http.get('/api/users/' + this.selectedUsers.ids[id]).then(response=> {
+          this.checkedUser.push(response.data);
+        });
+        this.Auth.changeMessage(this.selectedUsers.ids[id], true);
+      }
     }
+    this.$location.path('/');
   }
 
 }
