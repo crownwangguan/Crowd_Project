@@ -1,7 +1,4 @@
 'use strict';
-
-(function() {
-
 class NavbarController {
   //start-non-standard
   
@@ -18,14 +15,6 @@ class NavbarController {
     this.isLoggedIn = Auth.isLoggedIn;
     this.isAdmin = Auth.isAdmin;
     this.getCurrentUser = Auth.getCurrentUser();
-    this.users = [];
-    $http.get('/api/users').then(response => {
-      this.users = response.data;
-      socket.syncUpdates('user', this.users);
-    });
-    $scope.$on('$destroy', function() {
-      socket.unsyncUpdates('user');
-    });
   }
 
   isActive(route) {
@@ -40,4 +29,3 @@ class NavbarController {
 
 angular.module('crowdSourcingApp')
   .controller('NavbarController', NavbarController);
-})();
