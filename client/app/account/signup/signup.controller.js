@@ -7,7 +7,7 @@ class SignupController {
   submitted = false;
 
   //end-non-standard
-  constructor(Auth, $location, $scope, filterFilter) {
+  constructor(Auth, $location) {
     this.Auth = Auth;
     this.$location = $location;
   }

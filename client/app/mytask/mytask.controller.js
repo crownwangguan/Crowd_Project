@@ -21,8 +21,8 @@ class MytaskController {
     });
   }
   deleteThing(thing) {
-    var r = confirm("Warning! Are you sure you want to delete this task?");
-    if (r == true) {
+    var r = window.confirm('Warning! Are you sure you want to delete this task?');
+    if (r === true) {
         this.$http.delete('/api/things/' + thing._id);
     }
   }

@@ -9,7 +9,7 @@ class AdminController {
   }
 
   delete(user) {
-  	if (confirm("Are you sure you want to delete this user?") == true) {
+  	if (window.confirm('Are you sure you want to delete this user?') === true) {
         user.$remove();
     	this.users.splice(this.users.indexOf(user), 1);
     }

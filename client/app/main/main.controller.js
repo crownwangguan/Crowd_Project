@@ -15,7 +15,6 @@ class MainController {
       this.awesomeThings = response.data;
       socket.syncUpdates('thing', this.awesomeThings);
     });
-    
     $scope.$on('$destroy', function() {
       socket.unsyncUpdates('thing');
     });

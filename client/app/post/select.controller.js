@@ -10,20 +10,18 @@ class SelectController {
     this.$location = $location;
     this.thingService = thingService;
     this.isAdmin = Auth.isAdmin;
-    this.currentUser = Auth.getCurrentUser();
     this.users = [];
+    this.currentUser = Auth.getCurrentUser();
+    $http.get('/api/users').then(response => {
+      this.users = response.data;
+    });
     this.selectedUsers = {
       ids: []
     };
-    this.currUser;
     this.checkedUser = [];
     this.thing = thingService.getThings();
     this.thing.money = thingService.getThings()[0];
     this.thing.tag = thingService.getThings()[1];
-    $http.get('/api/users').then(response => {
-      this.users = response.data;
-      socket.syncUpdates('user', this.users);
-    });
   }
 
   informUser() {

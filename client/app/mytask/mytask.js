@@ -7,5 +7,5 @@ angular.module('crowdSourcingApp')
         templateUrl: 'app/mytask/mytask.html',
         controller: 'MytaskCtrl',
         controllerAs: 'mytask'
-      })
+      });
   });
